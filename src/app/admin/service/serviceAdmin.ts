@@ -14,9 +14,17 @@ export class serviceAdmin {
     return [];
   }
 
-  addadmin() {}
+  addadmin(){
+  }
+
 
   deleteadmin() {}
   updateadmin() {}
   disactiveradmin() {}
+}
+
+chercheradmin(){
+    
+}
+
 }
