@@ -10,6 +10,7 @@ import { ProduitComponent } from './produit/produit.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { RestauComponent } from './restau/restau.component';
 import { LivreurComponent } from './livreur/livreur.component';
+import { HttpClientModule } from '@angular/common/http'; // Importez le module HttpClientModule
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LivreurComponent } from './livreur/livreur.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
