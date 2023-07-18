@@ -11,19 +11,18 @@ export class serviceAdmin {
   constructor(private http: HttpClient) {}
 
   getAdmin(): Admin[] {
-    return []
+    return [];
   }
+
   addadmin(){
   }
 
- deleteadmin(){
-}
-updateadmin(){
 
+  deleteadmin() {}
+  updateadmin() {}
+  disactiveradmin() {}
 }
-disactiveradmin(){
 
-}
 chercheradmin(){
     
 }
