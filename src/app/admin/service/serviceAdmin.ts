@@ -13,7 +13,6 @@ export class serviceAdmin {
   getAdmin(): Admin[] {
     return []
   }
-
   addadmin(){
   }
 
@@ -24,6 +23,9 @@ updateadmin(){
 }
 disactiveradmin(){
 
+}
+chercheradmin(){
+    
 }
 
 }
