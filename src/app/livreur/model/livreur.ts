@@ -1,5 +1,5 @@
 export class Livreur {
-  id_livreur!: number;
+  id_livreur?: number;
   nom!: string;
   prenom!: string;
   id_ville!: number;
