@@ -11,8 +11,11 @@ import { tap ,Subscription} from 'rxjs';
 export class AddOrModAdminComponent implements OnInit  ,OnChanges{
   sharedData!: Admin;
   private subscription!: Subscription;
+button_!:string;
 
-  @Output() valueEmitted = new EventEmitter<Admin>();
+@Output() valueEmitted = new EventEmitter<{ admin: Admin, isBoolean: boolean }>();
+
+
 
   constructor(private service: serviceAdmin) {
     this.subscription = this.service.getSharedData().pipe(
@@ -27,19 +30,21 @@ export class AddOrModAdminComponent implements OnInit  ,OnChanges{
       this.admin.dispo_admin=data.dispo_admin;
       this.admin.mdp=data.mdp;
       this.admin.id_admin=data.id_admin;
+     this.button_="update"
     });
   }
 
- 
-
-  admin:Admin={nom_admin:'',
+  admin:Admin={
+    id_admin:-1,
+    nom_admin:'',
   prenom_admin: '',
   email_admin: '',
   numero_admin:0,
   url_img:"qwer",
   role_admin: '2',
   dispo_admin:"1",
-  mdp: ''};
+  mdp: '',
+};
 
 
   ngOnChanges(changes: SimpleChanges) {
@@ -48,14 +53,24 @@ export class AddOrModAdminComponent implements OnInit  ,OnChanges{
     }
   }
   ngOnInit(): void {
-    
+   this.button_="envoyer"
   }
   onSubmit(){
+if(this.button_=="envoyer"){
+  this.service.addadmin(this.admin).pipe(tap((value)=>{
+    this.valueEmitted.emit({admin:value,isBoolean:true});
+  })).subscribe(e=>console.log(e,"new admin"))
+}else{
 
-    this.service.addadmin(this.admin).pipe(tap((value)=>{
-      this.valueEmitted.emit(value);
-    })).subscribe(e=>console.log(e,"new admin"))
+   this.service.updateadmin(this.admin,this.admin.id_admin).pipe(tap((value)=>{
+    this.valueEmitted.emit({admin:value,isBoolean:false});
+  })).subscribe(e=>console.log(e,"new admin"))
+}
+   
 
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
 

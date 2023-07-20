@@ -1,1 +1,7 @@
-<p>restau works!</p>
+    
+    <div class="details">
+       
+        <app-tab-restau class="recentOrders" [restaus]="restaus"  (valueEmitted)="getValueFromtable($event)"  ></app-tab-restau >
+        
+        <app-add-or-mod-restau class="recentOrders" (valueEmitted)="getValueFromChild($event)"   ></app-add-or-mod-restau>
+    </div>

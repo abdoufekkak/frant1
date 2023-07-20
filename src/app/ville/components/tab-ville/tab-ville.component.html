@@ -1,0 +1,38 @@
+<div class="cardHeader">
+    <h2>Recent Orders</h2>
+    <input type="text" name="" class="btn" [(ngModel)]="valeur"  (input)="onValeurChange()"/>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <td>id_ville</td>
+            <td>nom_ville</td>
+           
+            <td>action</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let ville of villes">
+            <td>{{ville.id_ville}}</td>
+            <td>{{ville.nom_ville}}</td>
+        
+             <td>   <span class="status delivered" (click)="delete(ville.id_ville)">delete</span> </td>
+        </tr>
+
+       
+
+      
+
+       
+
+      
+
+    
+       
+
+      
+    </tbody>
+</table>
+

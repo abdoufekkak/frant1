@@ -15,6 +15,12 @@ import { LoginComponent } from './login/login.component';
 import { AddOrModAdminComponent } from './admin/component/add-or-mod-admin/add-or-mod-admin.component'; // Importez le module HttpClientModule
 import { TableauadminComponent } from './admin/component/tableauadmin/tableauadmin.component';
 import { FormsModule } from '@angular/forms';
+import { AddOrModVilleComponent } from './ville/components/add-or-mod-ville/add-or-mod-ville.component';
+import { TabVilleComponent } from './ville/components/tab-ville/tab-ville.component';
+import { TabRestauComponent } from './restau/components/tab-restau/tab-restau.component';
+import { AddOrModRestauComponent } from './restau/components/add-or-mod-restau/add-or-mod-restau.component';
+import { AddOrUpdateProduitComponent } from './produit/components/add-or-update-produit/add-or-update-produit.component';
+import { TabProduitComponent } from './produit/components/tab-produit/tab-produit.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +34,12 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     TableauadminComponent,
     AddOrModAdminComponent,
+    AddOrModVilleComponent,
+    TabVilleComponent,
+    TabRestauComponent,
+    AddOrModRestauComponent,
+    AddOrUpdateProduitComponent,
+    TabProduitComponent,
   ],
   imports: [
     BrowserModule,

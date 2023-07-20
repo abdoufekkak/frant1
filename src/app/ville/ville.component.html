@@ -1,1 +1,7 @@
-<p>ville works!</p>
+
+<div class="details">
+
+<app-tab-ville class="recentOrders" [villes]="villes"></app-tab-ville>
+
+<app-add-or-mod-ville class="recentOrders" (valueEmitted)="getValueFromChild($event)"></app-add-or-mod-ville>
+</div>

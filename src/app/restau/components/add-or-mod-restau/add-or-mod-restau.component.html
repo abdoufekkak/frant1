@@ -1,0 +1,31 @@
+   
+   <div class="cardHeader">
+    <h2>Recent Orders </h2>
+  </div  >
+  <form class="form" (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <h2>CONTACT US</h2>
+    <p>nom_restau:</p>
+    <input type='text' placeholder="nom_restau" [(ngModel)]="restau.nom_restau"  name="nom_restau"  />
+    <p>ville_restau:</p>
+    <input type='text' placeholder="ville_restau" [(ngModel)]="restau.ville_restau"  name="ville_restau"  />
+    <p>tarif:</p>
+    <input type='number' placeholder="tarif" [(ngModel)]="restau.tarif"  name="tarif"  />
+    <p>contact:</p>
+    <input type='text' placeholder="contact" [(ngModel)]="restau.contact"  name="contact"  />
+    <p>email:</p>
+    <input type='email' placeholder="restau.email" [(ngModel)]="restau.email"  name="restau.email"  />
+    <p>mdp:</p>
+    <input type='text' placeholder="mdp" [(ngModel)]="restau.mdp"  name="mdp"  />
+    
+   
+    
+    <p>logo:</p> 
+    <input
+        type="file"
+        id="file"
+        name=""
+      />                
+       <input type="submit" [value]="button_" />
+  </form>
+
+

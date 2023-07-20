@@ -1,13 +1,11 @@
 export class Restau {
-    nom!:string;
-    prenom!:string;
-    id_ville!:number;
+   id_restau?:number;
+    nom_restau!:string;
+    ville_restau!:string;
+    tarif!:number;
+    contact!:string;
+    disponibilite!:string;
     email!:string;
-    url_img!:string;
-    numero!:string;
-    quota_fixe!:string;
-    quota_km!:string;
-    disponible!:string;
      mdp!:string;
-    supp!:string
+    logo!:string
 }
