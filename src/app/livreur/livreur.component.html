@@ -1,1 +1,12 @@
-<p>livreur works!</p>
+<div class="details">
+  <app-tableaulivreur
+    class="recentOrders"
+    [livreurs]="livreurs"
+    (valueEmitted)="getValueFromtable($event)"
+  ></app-tableaulivreur>
+
+  <!-- <app-add-or-mod-livreur
+    class="recentOrders"
+    (valueEmitted)="getValueFromChild($event)"
+  ></app-add-or-mod-livreur> -->
+</div>
