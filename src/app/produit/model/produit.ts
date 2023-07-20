@@ -5,4 +5,7 @@ export class Produit {
   categorie!: string;
   supp!: number;
   id_restau!: number;
+  nom_restau!:string
+  url_image!:string
+  dispo!:number
 }

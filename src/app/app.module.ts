@@ -21,8 +21,8 @@ import { TabRestauComponent } from './restau/components/tab-restau/tab-restau.co
 import { AddOrModRestauComponent } from './restau/components/add-or-mod-restau/add-or-mod-restau.component';
 import { AddOrUpdateProduitComponent } from './produit/components/add-or-update-produit/add-or-update-produit.component';
 import { TabProduitComponent } from './produit/components/tab-produit/tab-produit.component';
+import { TabLivreurComponent } from './livreur/component/tab-livreur/tab-livreur.component';
 import { AddOrModLivreurComponent } from './livreur/component/add-or-mod-livreur/add-or-mod-livreur.component';
-import { TableaulivreurComponent } from './livreur/component/tableaulivreur/tableaulivreur.component';
 
 @NgModule({
   declarations: [
@@ -42,8 +42,10 @@ import { TableaulivreurComponent } from './livreur/component/tableaulivreur/tabl
     AddOrModRestauComponent,
     AddOrUpdateProduitComponent,
     TabProduitComponent,
+    TabLivreurComponent,
     AddOrModLivreurComponent,
-    TableaulivreurComponent,
+    LivreurComponent
+    
   ],
   imports: [
     BrowserModule,

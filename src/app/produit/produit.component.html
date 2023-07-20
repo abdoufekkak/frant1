@@ -1,1 +1,9 @@
-<p>produit works!</p>
+
+
+    
+    <div class="details">
+       
+        <app-tab-produit class="recentOrders" [produits]="produits"  (valueEmitted)="getValueFromtable($event)"  ></app-tab-produit>
+        
+        <app-add-or-update-produit class="recentOrders" (valueEmitted)="getValueFromChild($event)"   ></app-add-or-update-produit >
+    </div>
