@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { serviceLivreur } from './service/serviceLivreur';
 
 @Component({
@@ -7,6 +7,6 @@ import { serviceLivreur } from './service/serviceLivreur';
   styleUrls: ['./livreur.component.scss'],
 })
 export class LivreurComponent implements OnInit {
-  constructor(private service: serviceAdmin) {}
+  constructor(private service: serviceLivreur) {}
   ngOnInit(): void {}
 }

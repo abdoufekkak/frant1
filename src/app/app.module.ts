@@ -10,7 +10,11 @@ import { ProduitComponent } from './produit/produit.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { RestauComponent } from './restau/restau.component';
 import { LivreurComponent } from './livreur/livreur.component';
-import { HttpClientModule } from '@angular/common/http'; // Importez le module HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { AddOrModAdminComponent } from './admin/component/add-or-mod-admin/add-or-mod-admin.component'; // Importez le module HttpClientModule
+import { TableauadminComponent } from './admin/component/tableauadmin/tableauadmin.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,14 @@ import { HttpClientModule } from '@angular/common/http'; // Importez le module H
     ProduitComponent,
     DashbordComponent,
     RestauComponent,
-    LivreurComponent
+    LoginComponent,
+    TableauadminComponent,
+    AddOrModAdminComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

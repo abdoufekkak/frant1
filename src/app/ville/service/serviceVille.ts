@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Ville} from '../model/ville';
+import { Ville } from '../model/ville';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class serviceVille {
-  private admins: Ville[] = [];
+  private Ville: Ville[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -17,9 +17,13 @@ export class serviceVille {
   addVille(){
   }
 
- deletVille(){
+ deleteVille(){
 }
 updateVille(){
 
 }
+disactiverVille(){
+
+}
+
 }

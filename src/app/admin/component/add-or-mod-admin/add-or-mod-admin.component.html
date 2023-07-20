@@ -1,0 +1,29 @@
+   
+   <div class="cardHeader">
+      <h2>Recent Orders </h2>
+    </div  >
+    <form class="form" (ngSubmit)="onSubmit()" #myForm="ngForm">
+      <h2>CONTACT US</h2>
+      <p>nom:</p>
+      <input type='text' placeholder="nom" [(ngModel)]="admin.nom_admin"  name="nom_admin"  />
+      <p>prenom:</p>
+      <input   type='text' placeholder="prenom" [(ngModel)]="admin.prenom_admin"  name='prenom_admin'   />
+      <p>email:</p>
+      <input  type='text' placeholder="email" [(ngModel)]="admin.email_admin"   name='email_admin'  />
+      <p>numero:</p>
+      <input  type='number' placeholder="numero"  [(ngModel)]="admin.numero_admin"  name="numero_admin"  />
+      <p>role_admin:</p>
+      <select [(ngModel)]="admin.role_admin">
+        <option  [value]="1">1</option>
+        <option  [value]="2">2</option>
+      </select>
+      <p>mdp :</p>
+      <input  type='text' placeholder="mdp"  [(ngModel)]="admin.mdp"  name='mdp'   />
+      <p>url_image:</p> 
+      <input
+          type="file"
+          id="file"
+          name=""
+        />                
+         <input type="submit" value="modifie" />
+    </form>

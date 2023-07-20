@@ -1,1 +1,9 @@
-<p>admin works!</p>
+ 
+
+    
+    <div class="details">
+       
+        <app-tableauadmin class="recentOrders" [admins]="admins"  (valueEmitted)="getValueFromtable($event)"  ></app-tableauadmin>
+        
+        <app-add-or-mod-admin class="recentOrders" (valueEmitted)="getValueFromChild($event)"  ></app-add-or-mod-admin>
+    </div>

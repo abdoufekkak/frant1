@@ -1,0 +1,52 @@
+        <div class="cardHeader">
+            <h2>Recent Orders</h2>
+            <input type="text" name="" class="btn" [(ngModel)]="valeur"  (input)="onValeurChange()"/>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>image</td>
+                    <td>nom</td>
+                    <td>prenom</td>
+                    <td>email_admin</td>
+                    <td>telephone</td>
+                    <td>role_admin</td>
+                    <td>disponibilite</td>
+                    <td>action</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let admin of admins">
+                    <td></td>
+                    <td>{{admin.nom_admin}}</td>
+                    <td>{{admin.prenom_admin}}</td>
+                    <td>{{admin.email_admin}}</td>
+                    <td>{{admin.numero_admin}}</td>
+                    <td>{{admin.role_admin}}</td>
+
+
+<td>    <input class="form-check-input" type="radio" [name]="admin.id_admin" [value]="admin.id_admin" [checked]="admin.dispo_admin=='1'" (click)="disponible(admin.dispo_admin,admin,admin.id_admin)" />
+
+</td>
+                    <td><div>  <span class="status delivered" (click)="update(admin)">update</span>
+                        <span class="status delivered" (click)="delete(admin.id_admin)">delete</span> </div></td>
+                </tr>
+
+               
+
+              
+
+               
+
+              
+
+            
+               
+
+              
+            </tbody>
+        </table>
+
+ 
