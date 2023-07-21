@@ -1,5 +1,11 @@
 <div class="cardHeader">
     <h2>Recent Orders</h2>
+    <select [(ngModel)]="sosio" name="sosio" (change)="chercher()">
+        <option value=""></option>
+
+        <option *ngFor="let restau of resteaus" [value]="restau.id_restau">{{restau.nom_restau}}</option>
+    </select>
+
     <input type="text" name="" class="btn" [(ngModel)]="valeur"  (input)="onValeurChange()"/>
 </div>
 
@@ -11,6 +17,9 @@
             <td>prix</td>
             <td>categorie</td>
             <td> nom_restau</td>
+
+            <td> disponible</td>
+
             <td>action</td>
         </tr>
      

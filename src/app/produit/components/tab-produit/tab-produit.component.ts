@@ -1,19 +1,23 @@
-import { Component,Output ,Input,EventEmitter} from '@angular/core';
+import { Component,Output ,Input,EventEmitter, OnInit} from '@angular/core';
 import { serviceProduit } from '../../service/serciceProduit';
 import { Produit } from '../../model/produit';
 import {tap} from "rxjs"
+import { Restau } from 'src/app/restau/model/Restau';
+import { serviceRestau } from 'src/app/restau/service/serviceResau';
 @Component({
   selector: 'app-tab-produit',
   templateUrl: './tab-produit.component.html',
   styleUrls: ['./tab-produit.component.scss']
 })
-export class TabProduitComponent {
+export class TabProduitComponent implements OnInit {
 
   valeur: string = '';
+  sosio:number =-1
+  resteaus!:Restau[];
 
   isChecked: boolean = false;
 
-  constructor(private service:serviceProduit){
+  constructor(private service:serviceProduit,private serviceres:serviceRestau){
     
   }
   @Input() produits!:Produit[];
@@ -22,6 +26,8 @@ export class TabProduitComponent {
  @Output() valueEmitted = new EventEmitter<Produit>();
 
   ngOnInit(): void {
+    this.serviceres.getrestau().subscribe(e=>this.resteaus=e,err=>console.log(err))
+
   }
   delete(id?: number) {
     this.service.deleteProduit(id).pipe(
@@ -35,10 +41,17 @@ export class TabProduitComponent {
     ).subscribe(e=>console.log(e),er=>alert(er));
   }
   update(produit:Produit) {
-    // this.service.setSharedData(admin);
+    this.service.setSharedData(produit);
     // this.valueEmitted.emit(admin);
 
    
+  }
+  chercher(){
+
+    this.service.chercherParEntreprise(this.sosio).pipe(
+      tap((valeur) => this.produits = valeur) // Utilisez 'tap' pour affecter la valeur à la propriété 'admins'
+    ).subscribe(e=>console.log(e),err=>console.log(err));
+
   }
  
   disponible(produit:Produit){

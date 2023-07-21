@@ -30,23 +30,23 @@ if(data.isBoolean){
   produitss.push(data.produit)
   this.produits=produitss;}
 // }
-// else{
-//   let  adminss=[...this.admins]
+else{
+  let  prds=[...this.produits]
 
-//   const adminTrouve = adminss.find((admin) => admin.id_admin === data.admin.id_admin);
-//   if (adminTrouve) {
-//     adminTrouve.nom_admin = data.admin.nom_admin;
-// adminTrouve.prenom_admin = data.admin.prenom_admin;
-// adminTrouve.email_admin = data.admin.email_admin
-// adminTrouve.numero_admin = data.admin.numero_admin;
-// adminTrouve.url_img =data.admin.role_admin;
-// adminTrouve.role_admin = data.admin.role_admin;
-// adminTrouve.dispo_admin =data.admin.dispo_admin ;
-// adminTrouve.mdp =  data.admin.mdp;
-// this.admins=adminss;
-//   }
-
-// }
+  const adminTrouve = prds.find((produit) => produit.id_prod === data.produit.id_prod);
+  console.log(data.produit.id_prod,"Wer")
+  if (adminTrouve) {
+    adminTrouve.nom = data.produit.nom;
+adminTrouve.prix = data.produit.prix;
+adminTrouve.categorie = data.produit.categorie
+adminTrouve.supp = data.produit.supp;
+adminTrouve.id_restau =data.produit.id_restau;
+adminTrouve.nom_restau = data.produit.nom_restau;
+adminTrouve.url_image =data.produit.url_image ;
+adminTrouve.dispo =  data.produit.dispo;
+this.produits=prds;
+   }
+ }
   }
 
   ngOnInit(): void { 

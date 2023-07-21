@@ -3,7 +3,7 @@ import { Produit } from '../../model/produit';
 import { serviceProduit } from '../../service/serciceProduit';
 import { serviceRestau } from 'src/app/restau/service/serviceResau';
 import { Restau } from 'src/app/restau/model/Restau';
-import {tap} from "rxjs"
+import {tap,Subscription} from "rxjs"
 @Component({
   selector: 'app-add-or-update-produit',
   templateUrl: './add-or-update-produit.component.html',
@@ -11,8 +11,8 @@ import {tap} from "rxjs"
 })
 export class AddOrUpdateProduitComponent  implements OnInit{
 
-  // sharedData!: Admin;
-  // private subscription!: Subscription;
+  sharedData!: Produit;
+  private subscription!: Subscription;
 button_!:string;
 resteaus!:Restau[];
 
@@ -21,20 +21,21 @@ resteaus!:Restau[];
 
 
   constructor(private service: serviceProduit,private serviceres:serviceRestau) {
-    // this.subscription = this.service.getSharedData().pipe(
+    this.subscription = this.service.getSharedData().pipe(
      
-    // ).subscribe((data) => {
-    //   this.sharedData = data;
-    //   this.admin.nom_admin=data.nom_admin;
-    //   this.admin.prenom_admin=data.prenom_admin;
-    //   this.admin.email_admin=data.email_admin;
-    //   this.admin.url_img=data.url_img;
-    //   this.admin.role_admin=data.role_admin;
-    //   this.admin.dispo_admin=data.dispo_admin;
-    //   this.admin.mdp=data.mdp;
-    //   this.admin.id_admin=data.id_admin;
-    //  this.button_="update"
-    // });
+    ).subscribe((data) => {
+      this.sharedData = data;
+      this.produit.id_prod=data.id_prod;
+      this.produit.nom=data.nom;
+      this.produit.prix=data.prix;
+      this.produit.categorie=data.categorie;
+      this.produit.supp=0;
+      this.produit.id_restau=data.id_restau;
+      this.produit.url_image=data.url_image;
+      this.produit.nom_restau=data.nom_restau;
+      this.produit.dispo=data.dispo
+     this.button_="update"
+    });
   }
 
   produit:Produit={
@@ -64,15 +65,14 @@ if(this.button_=="envoyer"){
   })).subscribe(e=>console.log(e,"new admin"))
 }else{
 
-  //  this.service.updateadmin(this.admin,this.admin.id_admin).pipe(tap((value)=>{
-  //   this.valueEmitted.emit({admin:value,isBoolean:false});
-  // })).subscribe(e=>console.log(e,"new admin"))
+   this.service.updateProduit(this.produit,this.produit.id_prod).pipe(tap((value)=>{
+    this.valueEmitted.emit({produit:value,isBoolean:false});
+  })).subscribe(e=>console.log(e,"new admin"))
 }
    
+  }
+  ngOnDestroy() {
+    // this.subscription.unsubscribe();
+  }
 
-  // }
-  // ngOnDestroy() {
-  //   // this.subscription.unsubscribe();
-  // }
-}
 }

@@ -47,9 +47,9 @@ export class serviceProduit {
   deleteProduit(id?:number):Observable<any>{
     return this.http.delete<any>(`${apiUrl}/produit/${id}`)
   }
-  updateProduit(admin:Produit,id?:number) {
+  updateProduit(produit:Produit,id?:number) {
 
-    return this.http.put<any>(`${apiUrl}/admin/${id}`,admin)
+    return this.http.put<any>(`${apiUrl}/produit/${id}`,produit)
 
   }
   disactiverProduit(disactive:any,id:number) {
@@ -59,6 +59,10 @@ export class serviceProduit {
 
 chercherProduit(nom:string):Observable<Produit[]>{
   return this.http.get<Produit[]>(`${apiUrl}/produit/chercher?nom=${nom}`)
+    
+}
+chercherParEntreprise(id:number):Observable<Produit[]>{
+  return this.http.get<Produit[]>(`${apiUrl}/produit/parentre?id=${id}`)
     
 }
 }
