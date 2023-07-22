@@ -23,6 +23,10 @@ import { AddOrUpdateProduitComponent } from './produit/components/add-or-update-
 import { TabProduitComponent } from './produit/components/tab-produit/tab-produit.component';
 import { TabLivreurComponent } from './livreur/component/tab-livreur/tab-livreur.component';
 import { AddOrModLivreurComponent } from './livreur/component/add-or-mod-livreur/add-or-mod-livreur.component';
+import { CarsComponent } from './dashbord/components/cars/cars.component';
+import { CommandesComponent } from './dashbord/components/commandes/commandes.component';
+import { CalculeComponent } from './dashbord/components/calcule/calcule.component';
+import { TableauCalculeComponent } from './dashbord/components/calcule/componets/tableau-calcule/tableau-calcule.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { AddOrModLivreurComponent } from './livreur/component/add-or-mod-livreur
     TabProduitComponent,
     TabLivreurComponent,
     AddOrModLivreurComponent,
-    LivreurComponent
+    LivreurComponent,
+    CarsComponent,
+    CommandesComponent,
+    CalculeComponent,
+    TableauCalculeComponent
     
   ],
   imports: [

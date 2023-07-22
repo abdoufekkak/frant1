@@ -1,0 +1,31 @@
+<div class="cardHeader">
+    <h2>Recent Orders</h2>
+    <!-- <input type="text" name="" class="btn" [(ngModel)]="valeur"  (input)="onValeurChange()"/> -->
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <td>resteau</td>
+        
+            <td>credit</td>
+           
+            <td>action</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let calcule of calcules">
+            <td>{{calcule.nom_restau}}</td>
+            <td>{{calcule.prix_total}}</td>
+
+
+<td>    <input class="form-check-input" type="radio" [name]="calcule.id_restau"
+     [value]="calcule.id_restau" (click)="supprimer(calcule.id_restau)" />
+
+</td>
+           
+
+       
+
+      
