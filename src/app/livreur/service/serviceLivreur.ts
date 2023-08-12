@@ -11,20 +11,28 @@ export class serviceLivreur {
   private livreurs: Livreur[] = [];
   private sharedDataSubject: BehaviorSubject<Livreur> =
     new BehaviorSubject<Livreur>({
-      nom: '',
+      nom_livreur: '',
       prenom: '',
-      email: '',
       id_ville: 1,
-      numero: 0,
+      email: '',
       url_img: 'qwer',
+      numero: 0,
       quota_fixe: 2,
       quota_km: 3,
       disponible: '1',
+      nom_ville: 'f',
       mdp: '',
       supp: 0,
     });
   constructor(private http: HttpClient) {}
 
+  setSharedData(data: Livreur) {
+    this.sharedDataSubject.next(data);
+  }
+
+  getSharedData(): Observable<Livreur> {
+    return this.sharedDataSubject.asObservable();
+  }
   getLivreur(): Observable<Livreur[]> {
     return this.http.get<Livreur[]>(`${apiUrl}/livreur`);
   }
@@ -45,7 +53,9 @@ export class serviceLivreur {
     });
   }
 
-  chercheradmin(nom: string): Observable<Livreur[]> {
-    return this.http.get<Livreur[]>(`${apiUrl}/livreur//chercher?nom=${nom}`);
+  chercherLivreur(nom_livreur: string): Observable<Livreur[]> {
+    return this.http.get<Livreur[]>(
+      `${apiUrl}/livreur//chercher?nom_livreur=${nom_livreur}`
+    );
   }
 }

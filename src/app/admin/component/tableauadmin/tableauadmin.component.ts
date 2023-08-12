@@ -31,7 +31,7 @@ export class TableauadminComponent  implements OnInit{
           this.admins.splice(index, 1);
         }
       })
-    ).subscribe(e=>console.log(e),er=>alert(er));
+    ).subscribe(e=>console.log(e),er=>console.log(er));
   }
   update(admin:Admin) {
     this.service.setSharedData(admin);

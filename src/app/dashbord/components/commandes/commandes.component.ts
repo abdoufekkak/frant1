@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, numberAttribute } from '@angular/core';
 import { serviceDashbord } from '../../service/serviceDashbord';
 import { Dashbord } from '../../model/dashbord';
+import { serviceCards } from '../cars/service/servicecard';
+import { Cards } from '../cars/model/cars';
 
 @Component({
   selector: 'app-commandes',
@@ -12,19 +14,51 @@ export class CommandesComponent  implements OnInit{
   datedebut!:Date;
   datefin!:Date;
  @Input() panies!:Dashbord[];
-  constructor(private service:serviceDashbord){
+ cards!:Cards
+  constructor(private service:serviceDashbord,private servicecard:serviceCards){
 
 
   }
 
   ngOnInit(): void {
-    
 
   }
+  calculer_rbah(){
+
+    var  s=0;
+    var annules=0;
+    for(let i=0;i<this.panies.length;i++){
+      if(this.panies[i].annuler ==0){
+        annules=annules+1
+      }
+ s=s+this.panies[i].rbah_taoufik;
+    }
+    
+    this.servicecard.getSharedData().subscribe(data=>{this.cards=data;
+      this.cards.gain=s
+      this.cards.annuler=annules
+    })
+    this.servicecard.setSharedData(this.cards)
+    
+  }
+
+  
+calcule_Salle(){
+
+  var  s=this.panies.length;
+
+  
+  this.servicecard.getSharedData().subscribe(data=>{this.cards=data;
+    this.cards.salle=s
+  })
+  this.servicecard.setSharedData(this.cards)
+}
   envoyer(){
     if(this.datedebut&&this.datefin){
       this.service.getDashbord(this.datedebut,this.datefin).subscribe(date=>{
-        this.panies=date
+        this.panies=date;
+      this.calcule_Salle();
+      this.calculer_rbah();
       });
     }
   }

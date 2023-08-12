@@ -1,8 +1,9 @@
 export class Livreur {
   id_livreur?: number;
-  nom!: string;
+  nom_livreur!: string;
   prenom!: string;
   id_ville!: number;
+  nom_ville!: string;
   email!: string;
   url_img!: string;
   numero!: number;

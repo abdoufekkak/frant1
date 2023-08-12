@@ -1,1 +1,12 @@
-<app-add-or-mod-livreur></app-add-or-mod-livreur>
+<div class="details">
+    <app-tab-livreur
+      class="recentOrders"
+      [livreurs]="livreurs"
+      (valueEmitted)="getValueFromtable($event)"
+    ></app-tab-livreur>
+  
+    <app-add-or-mod-livreur
+      class="recentOrders"
+      (valueEmitted)="getValueFromChild($event)"
+    ></app-add-or-mod-livreur>
+  </div>

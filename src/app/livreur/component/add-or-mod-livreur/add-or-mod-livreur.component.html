@@ -1,1 +1,59 @@
-<p>add-or-mod-livreur works!</p>
+<div class="cardHeader">
+    <h2>Recent Orders</h2>
+  </div>
+  <form class="form" (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <p>nom:</p>
+    <input
+      type="text"
+      placeholder="nom"
+      [(ngModel)]="livreur.nom_livreur"
+      name="nom"
+    />
+    <p>prenom:</p>
+    <input
+      type="text"
+      placeholder="prenom"
+      [(ngModel)]="livreur.prenom"
+      name="prenom"
+    />
+    <p>email:</p>
+    <input
+      type="text"
+      placeholder="email"
+      [(ngModel)]="livreur.email"
+      name="email"
+    />
+    <p>numero:</p>
+    <input
+      type="number"
+      placeholder="numero"
+      [(ngModel)]="livreur.numero"
+      name="numero"
+    />
+    <p>quota_fixe</p>
+    <input
+      type="number"
+      placeholder="quota_fixe"
+      [(ngModel)]="livreur.quota_fixe"
+      name="quota"
+    />
+    <p>quota_km</p>
+    <input
+      type="number"
+      placeholder="quota_km"
+      [(ngModel)]="livreur.quota_km"
+      name="quota_km"
+    />
+    <p>mdp :</p>
+    <input type="text" placeholder="mdp" [(ngModel)]="livreur.mdp" name="mdp" />
+   
+    <p>ville:</p>
+    <select [(ngModel)]="livreur.id_ville" name="id_ville">
+      <option *ngFor="let ville of villes" [value]="ville.id_ville">
+        {{ ville.nom_ville }}
+      </option>
+    </select>
+    <p>url_image:</p>
+    <input type="file" id="file" name="" />
+    <input type="submit" [value]="button_" />
+  </form>

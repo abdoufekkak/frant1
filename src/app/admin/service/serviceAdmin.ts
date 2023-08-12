@@ -55,8 +55,7 @@ export class serviceAdmin {
 
 
 chercheradmin(prenom:string):Observable<Admin[]>{
-  return this.http.get<Admin[]>(`${apiUrl}/admin//chercher?prenom=${prenom}`)
-    
+  return this.http.get<Admin[]>(`${apiUrl}/admin/chercher?prenom=${prenom}`) 
 }
 
 }

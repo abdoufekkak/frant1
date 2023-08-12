@@ -9,5 +9,5 @@ export class Dashbord {
     annuler!:number;
     livraison_livre!:number;
     livraison_taoufik!:number;
-    rbah_taoufik!:Number
+    rbah_taoufik!:number
 }

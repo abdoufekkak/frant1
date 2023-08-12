@@ -14,7 +14,7 @@ export class LivreurComponent implements OnInit {
   constructor(private service: serviceLivreur) {}
   ngOnInit(): void {
     this.service.getLivreur().subscribe(
-      (data) => (this.livreurs = data),
+      (data) => {console.log(data);  this.livreurs = data;},
       (err) => console.log(err)
     );
   }
@@ -40,7 +40,7 @@ export class LivreurComponent implements OnInit {
         (livreur) => livreur.id_livreur === data.livreur.id_livreur
       );
       if (livreurTrouve) {
-        livreurTrouve.nom = data.livreur.nom;
+        livreurTrouve.nom_livreur = data.livreur.nom_livreur;
         livreurTrouve.prenom = data.livreur.prenom;
         livreurTrouve.email = data.livreur.email;
         livreurTrouve.numero = data.livreur.numero;
@@ -58,7 +58,7 @@ export class LivreurComponent implements OnInit {
   getValueFromtable(value: Livreur) {
     this.livreur = value;
   }
-  getValueFromChild_mod(valeur: Livreur) {
-    alert('xcv');
-  }
+  // getValueFromChild_mod(valeur: Livreur) {
+  //   alert('xcv');
+  // }
 }
