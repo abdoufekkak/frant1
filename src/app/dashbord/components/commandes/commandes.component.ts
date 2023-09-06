@@ -23,6 +23,14 @@ export class CommandesComponent  implements OnInit{
   ngOnInit(): void {
 
   }
+  afficher(panie:Dashbord){
+    console.log(panie)
+    const date1 = new Date(); // Exemple de date
+
+    const tel = "123-456-7890"; // Exemple de numéro de téléphone
+  
+this.service.modifyPDFField(date1,panie.nom_client,tel,panie.nom_livreur,String(panie.numero_client),panie.panie)
+  }
   calculer_rbah(){
 
     var  s=0;
@@ -40,9 +48,7 @@ export class CommandesComponent  implements OnInit{
     })
     this.servicecard.setSharedData(this.cards)
     
-  }
-
-  
+  }  
 calcule_Salle(){
 
   var  s=this.panies.length;

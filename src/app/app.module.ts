@@ -27,6 +27,7 @@ import { CarsComponent } from './dashbord/components/cars/cars.component';
 import { CommandesComponent } from './dashbord/components/commandes/commandes.component';
 import { CalculeComponent } from './dashbord/components/calcule/calcule.component';
 import { TableauCalculeComponent } from './dashbord/components/calcule/componets/tableau-calcule/tableau-calcule.component';
+import { httpInterceptorProviders } from './login/intercepteurs';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { TableauCalculeComponent } from './dashbord/components/calcule/componets
     CommandesComponent,
     CalculeComponent,
     TableauCalculeComponent
+
     
   ],
   imports: [
@@ -60,7 +62,7 @@ import { TableauCalculeComponent } from './dashbord/components/calcule/componets
     AppRoutingModule,
     HttpClientModule,FormsModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

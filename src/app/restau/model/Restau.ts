@@ -7,5 +7,7 @@ export class Restau {
     disponibilite!:string;
     email!:string;
      mdp!:string;
-    logo!:string
+    logo!:string;
+    date_debut!:string;
+    date_fin!:string
 }

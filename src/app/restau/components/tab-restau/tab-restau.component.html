@@ -13,6 +13,8 @@
             <td>contact</td>
             <td>disponibilite</td>
             <td>email</td>
+            <td>date_debut</td>
+            <td>date_fin</td>
             <td>action</td>
         </tr>
     </thead>
@@ -26,6 +28,9 @@
             <td>{{restau.contact}}</td>
             <td>    <input class="form-check-input" type="radio" [name]="restau.id_restau" [value]="restau.id_restau" [checked]="restau.disponibilite=='1'" (click)="disponible(restau)" /></td>
                 <td>{{restau.email}}</td>
+                <td>{{restau.date_debut}}</td>
+                <td>{{restau.date_fin}}</td>
+
 
             <td><div>  <span class="status delivered" (click)="update(restau)">update</span>
                 <span class="status delivered" (click)="delete(restau.id_restau)">delete</span> </div></td>

@@ -14,9 +14,11 @@ export class serviceRestau {
     ville_restau: '',
     tarif: 0,
     contact:"",
-    disponibilite:"d",
-    email: '2',
-    logo:"1",
+    disponibilite:"",
+    email: '',
+    logo:"",
+    date_debut:"",
+    date_fin:"",
   mdp: ''}
 );
 

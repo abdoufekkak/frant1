@@ -31,6 +31,9 @@ button_!:string;
       this.restau.email=data.email;
       this.restau.mdp=data.mdp;
       this.restau.id_restau=data.id_restau;
+      this.restau.date_debut=data.date_debut;
+      this.restau.date_fin=data.date_fin;
+
      this.button_="update"
     });
   }
@@ -44,6 +47,8 @@ button_!:string;
     disponibilite:"d",
     email: '2',
     logo:"1",
+    date_debut:"",
+    date_fin:"",
   mdp: '',
 };
 

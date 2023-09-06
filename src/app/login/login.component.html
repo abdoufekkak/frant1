@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="app">
+    <div class="container">
+
+
+<div class="auth">
+    <h1>Login</h1>
+    <form (ngSubmit)="onlogin()">
+      <input
+        required
+        type="email"
+        placeholder="email"
+        [(ngModel)]="login.email_admin"  name="email_admin"  />
+      <input
+        required
+        type="password"
+        placeholder="password"
+        [(ngModel)]="login.mdp" 
+        name="mdp"
+
+      />
+      <button  >Login</button>
+     
+    </form>
+  </div>
+    </div>
+</div>
