@@ -28,6 +28,7 @@ import { CommandesComponent } from './dashbord/components/commandes/commandes.co
 import { CalculeComponent } from './dashbord/components/calcule/calcule.component';
 import { TableauCalculeComponent } from './dashbord/components/calcule/componets/tableau-calcule/tableau-calcule.component';
 import { httpInterceptorProviders } from './login/intercepteurs';
+import { LivraisonCommandeComponent } from './livreur/component/livraison-commande/livraison-commande.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { httpInterceptorProviders } from './login/intercepteurs';
     CarsComponent,
     CommandesComponent,
     CalculeComponent,
-    TableauCalculeComponent
+    TableauCalculeComponent,
+    LivraisonCommandeComponent
 
     
   ],

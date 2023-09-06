@@ -13,3 +13,12 @@ export class Livreur {
   mdp!: string;
   supp!: number;
 }
+
+export class commande_par_livreur {
+  id_livreur!: number;
+  nom_livreur!: string;
+  numero!:number;
+  panies!:any[]; //image des recus ,date
+
+
+}

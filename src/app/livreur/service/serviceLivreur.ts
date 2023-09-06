@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Livreur } from '../model/livreur';
+import { Livreur, commande_par_livreur } from '../model/livreur';
 import { apiUrl } from 'src/app/admin/service/api';
 import { Observable, BehaviorSubject } from 'rxjs';
 
@@ -57,5 +57,15 @@ export class serviceLivreur {
     return this.http.get<Livreur[]>(
       `${apiUrl}/livreur//chercher?nom_livreur=${nom_livreur}`
     );
+  }
+
+  chercherCommandeParJour(jour?: Date): Observable<commande_par_livreur[]> {
+    return this.http.get<commande_par_livreur[]>(
+      `${apiUrl}/`
+    );  
+  }
+  pinaliser(id_livreur:number): Observable<any>{
+    return this.http.get<any>(`${apiUrl}/${id_livreur}`);
+
   }
 }

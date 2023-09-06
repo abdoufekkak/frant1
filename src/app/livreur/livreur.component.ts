@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { serviceLivreur } from './service/serviceLivreur';
-import { Livreur } from './model/livreur';
+import { Livreur, commande_par_livreur } from './model/livreur';
 
 @Component({
   selector: 'app-livreur',
@@ -10,6 +10,7 @@ import { Livreur } from './model/livreur';
 export class LivreurComponent implements OnInit {
   livreurs!: Livreur[];
   livreur!: Livreur;
+  commande_par_livreurs!:commande_par_livreur[]; 
 
   constructor(private service: serviceLivreur) {}
   ngOnInit(): void {
@@ -17,6 +18,8 @@ export class LivreurComponent implements OnInit {
       (data) => {console.log(data);  this.livreurs = data;},
       (err) => console.log(err)
     );
+
+    this.service.chercherCommandeParJour().subscribe((data)=> this.commande_par_livreurs=data);
   }
   getValueFromChild(data: { livreur: Livreur; isBoolean: boolean }) {
     // const x: Admin = new Admin();

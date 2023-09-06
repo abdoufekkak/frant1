@@ -1,0 +1,39 @@
+<div class="cardHeader">
+    <h2>Recent Orders</h2>
+    <input
+      type="date"
+      name=""
+      class="btn"
+      (input)="onValeurChange()"
+
+    />
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <td>livreur</td>
+        <td>recus</td>
+        <td>action</td>
+      </tr>
+    </thead>
+  
+    <tbody>
+     <tr *ngFor="let commande_par_livreur of commande_par_livreurs ">
+        <td></td>
+        <td>{{ commande_par_livreur.nom_livreur + "/"+ commande_par_livreur.numero }}</td>
+        <td><ul>
+            <li *ngFor="let imag of commande_par_livreur.panies"><img [src]="imag" /></li>
+        </ul> </td>
+      
+  
+      
+        <td>
+          <div>
+            <span class="status delivered" (click)="pinalise(commande_par_livreur.id_livreur)">update</span>
+          
+          </div>
+        </td>
+      </tr> 
+    </tbody>
+  </table>
